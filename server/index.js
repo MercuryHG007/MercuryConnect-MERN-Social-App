@@ -21,6 +21,12 @@ import { createPost } from './controllers/posts.js';
 // IMPORTING MIDDLEWARE
 import { verifyToken } from './middleware/auth.js';
 
+// IMPORTING MODELS FOR DUMMY DATA
+// import User from './models/user.js';
+// import Post from './models/post.js';
+// IMPORTING DUMMY DATA
+// import { users, posts } from './data/index.js';
+
 // CONFIGURATIONS
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -68,6 +74,9 @@ mongoose.connect(process.env.MONGO_URL, {
     app.listen(port, () => {
         console.log(`Server running on port: ${port}`);
     });
+
+    // User.insertMany(users);
+    // Post.insertMany(posts);
 })
 .catch((error) => {
     console.log(error.message);
