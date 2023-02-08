@@ -1,0 +1,7 @@
+// WHEN WE IMPORT DIFFERENT FILES WE CAN USE SRC AS THE BASE PATH
+{
+    "compilerOptions": {
+        "baseUrl": "src"
+    },
+    "include": ["src"]
+}
