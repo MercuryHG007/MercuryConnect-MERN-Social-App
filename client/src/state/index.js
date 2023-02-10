@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// This data is accessible in the enteire aplication
+// This data is accessible in the entire aplication
 const initialState = {
     mode: "light",
     user: null,

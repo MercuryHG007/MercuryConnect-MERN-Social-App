@@ -57,7 +57,7 @@ const Navbar = () => {
           fontWeight="bold"
           fontSize="clamp(1rem,2rem,2.25rem)"
           color="primary"
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/home')}
           sx={{
             "&:hover": {
               cursor: "pointer",
@@ -75,13 +75,10 @@ const Navbar = () => {
             borderRadius="9px"
             padding="0.1rem 1.5rem"
           >
-            <InputBase
-              placeholder="Search"
-            >
+            <InputBase placeholder="Search..." />
               <IconButton>
                 <Search />
               </IconButton>
-            </InputBase>
           </FlexBetween>
         )}
       </FlexBetween>
@@ -132,6 +129,7 @@ const Navbar = () => {
             value={fullName}
           >
             <Select
+              value={fullName}
               sx={{
                 backgroundColor: neutralLight,
                 width: "150px",
@@ -153,9 +151,11 @@ const Navbar = () => {
                 <Typography>{fullName}</Typography>
               </MenuItem>
               <MenuItem
-                onClick={() => dispatch(setLogout())}
+                onClick={() => {
+                  dispatch(setLogout())
+                }}
               >
-                Logout
+                Log Out
               </MenuItem>
             </Select>
           </FormControl>
@@ -242,6 +242,7 @@ const Navbar = () => {
               value={fullName}
             >
               <Select
+                value={fullName}
                 sx={{
                   backgroundColor: neutralLight,
                   width: "150px",
@@ -265,7 +266,7 @@ const Navbar = () => {
                 <MenuItem
                   onClick={() => dispatch(setLogout())}
                 >
-                  Logout
+                  Log Out
                 </MenuItem>
               </Select>
             </FormControl>
