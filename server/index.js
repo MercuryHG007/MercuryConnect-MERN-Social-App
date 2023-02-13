@@ -53,11 +53,12 @@ const storage = multer.diskStorage({
     }
 });
 /* Use this to store files in the cloud */
-const upload = multer({storage: storage});
+const upload = multer({ storage });
 
 // ROUTES WITH FILES
-app.post('/auth/register', upload.single('profileImage'),(register)); //on the route of register, middleware function of upload image called before register(Controller)
-app.post('/posts', verifyToken, upload.single('postImage'), (createPost)); //on the route of posts, middleware function of upload image called before post(Controller)
+app.post('/auth/register', upload.single('profileImage'), register); //on the route of register, middleware function of upload image called before register(Controller)
+//app.post('/posts', verifyToken, upload.single('postImage'), createPost); //on the route of posts, middleware function of upload image called before post(Controller)
+app.post('/posts', upload.single('postImage'), createPost);
 
 // ROUTES
 app.use('/auth', authRoutes);
