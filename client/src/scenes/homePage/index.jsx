@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import Navbar from '../navbar';
 import UserWidget from '../widgets/UserWidget';
 import MyPostWidget from '../widgets/MyPostWidget';
+import AllPostsWidget from '../widgets/AllPostsWidget';
 
 const HomePage = () => {
 
@@ -42,6 +43,9 @@ const HomePage = () => {
         >
           <MyPostWidget 
             profileImagePath={profileImagePath}
+          />
+          <AllPostsWidget 
+            userId={_id}
           />
         </Box>
 
