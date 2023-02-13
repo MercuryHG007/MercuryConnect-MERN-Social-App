@@ -13,7 +13,7 @@ const router = express.Router();
 router.get('/', getFeedPosts); 
 
 //router.get('/:userId/posts', verifyToken, getUserPosts); // Query for a user's posts by id'
-router.get('/:userId/posts', getUserPosts);
+router.get('/:userId', getUserPosts);
 
 // UPDATE ROUTES
 //router.patch('/:id/like', verifyToken, likePost); // Like a post

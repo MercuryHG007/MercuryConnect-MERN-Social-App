@@ -9,6 +9,8 @@ import Navbar from '../navbar';
 import UserWidget from '../widgets/UserWidget';
 import MyPostWidget from '../widgets/MyPostWidget';
 import AllPostsWidget from '../widgets/AllPostsWidget';
+import AdvertWidget from '../widgets/AdvertWidget';
+import FriendListWidget from '../widgets/FriendListWidget';
 
 const HomePage = () => {
 
@@ -53,7 +55,11 @@ const HomePage = () => {
           <Box
             flexBasis="26%"
           >
-            {/* SUGGESTIONS */}
+            <AdvertWidget />
+            <Box m="2rem 0"/>
+            <FriendListWidget 
+              userId={_id}
+            />
           </Box>
         )}
       </Box>
