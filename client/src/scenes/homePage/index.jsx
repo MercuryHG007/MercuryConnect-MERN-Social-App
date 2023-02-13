@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 
 import Navbar from '../navbar';
 import UserWidget from '../widgets/UserWidget';
+import MyPostWidget from '../widgets/MyPostWidget';
 
 const HomePage = () => {
 
@@ -39,7 +40,9 @@ const HomePage = () => {
           flexBasis={isNonMobileScreen ? "42%" : undefined}
           mt={isNonMobileScreen ? undefined : "2rem"}
         >
-          {/* POSTS */}
+          <MyPostWidget 
+            profileImagePath={profileImagePath}
+          />
         </Box>
 
         {isNonMobileScreen && (
